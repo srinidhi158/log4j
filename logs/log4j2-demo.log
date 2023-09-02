@@ -1,0 +1,12 @@
+2023-09-02 01:41:04.379  WARN Prabhats-MacBook-Air.local --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h21s526ms).
+2023-09-02 03:41:20.153  WARN Prabhats-MacBook-Air.local --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h15s955ms).
+2023-09-02 05:41:50.185  WARN Prabhats-MacBook-Air.local --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h30s31ms).
+2023-09-02 07:41:52.809  WARN Prabhats-MacBook-Air.local --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h2s623ms).
+2023-09-02 09:41:55.720  WARN Prabhats-MacBook-Air.local --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h2s915ms).
+2023-09-02 11:41:51.988  WARN Prabhats-MacBook-Air.local --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h55m56s26ms).
+2023-09-02 11:42:21.031  WARN Prabhats-MacBook-Air.local --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Retrograde clock change detected (housekeeper delta=29s255ms), soft-evicting connections from pool.
+2023-09-02 13:37:09.987  WARN Prabhats-MacBook-Air.local --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h54m48s953ms).
+2023-09-02 14:30:03.746  INFO Prabhats-MacBook-Air.local --- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-09-02 14:30:03.842  INFO Prabhats-MacBook-Air.local --- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-02 14:30:04.074  INFO Prabhats-MacBook-Air.local --- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-09-02 14:30:04.152  INFO Prabhats-MacBook-Air.local --- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
