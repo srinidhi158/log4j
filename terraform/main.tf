@@ -182,7 +182,7 @@ resource "aws_key_pair" "darwin-instance-key" {
 # Create EC2 instance
 resource "aws_instance" "example_instance" {
   ami                         = data.aws_ami.most_recent_amazon_linux_2.id # Redhat, you can change this based on your region
-  instance_type               = "t2.micro"
+  instance_type               = "t2.medium"
   key_name                    = aws_key_pair.darwin-instance-key.key_name # Replace with the name of your EC2 key pair
   subnet_id                   = aws_subnet.public_subnet_1.id
   associate_public_ip_address = true

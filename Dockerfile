@@ -17,7 +17,7 @@ EXPOSE 8888
 
 # This is where you should pass your database configuration as environment variables.
 # Update these environment variables with your MySQL host, port, database name, username, and password.
-ENV SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container-global:3306/employee
+ENV SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/employee
 ENV SPRING_DATASOURCE_USERNAME=admin
 ENV SPRING_DATASOURCE_PASSWORD=Test@123
 
