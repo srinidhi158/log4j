@@ -1,0 +1,44 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 8
+      uses: actions/setup-java@v3
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+        cache: maven
+    - name: Set up Maven
+      run: |
+        if ! command -v mvn &> /dev/null
+        then
+          wget -q https://downloads.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
+          tar -zxvf apache-maven-3.9.4-bin.tar.gz
+          sudo mv apache-maven-3.9.4 /opt
+          sudo ln -s /opt/apache-maven-3.9.4/bin/mvn /usr/bin/mvn
+          mvn --version
+        else
+          echo "Maven is already installed."
+          mvn --version
+        fi
+    - name: Build with Maven
+      run: mvn clean install -DskipTests
