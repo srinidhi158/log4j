@@ -42,6 +42,8 @@ jobs:
         fi
     - name: Build with Maven
       run: mvn clean install -DskipTests
+    - name: Checkout repo
+      uses: actions/checkout@v2
     - name: Run Prisma Cloud 
       id: Prisma Cloud
       uses: bridgecrewio/checkov-action@master
