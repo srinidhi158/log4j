@@ -33,6 +33,10 @@ jobs:
         tar xf apache-maven-3.9.4-bin.tar.gz
         export PATH=$PATH:$(pwd)/apache-maven-3.9.4/bin
         mvn --version
+    - name: Set path to maven
+      id: mvn_path
+      run: |
+        echo "$(pwd)/apache-maven-3.9.4/bin" >> $GITHUB_ENV
     - name: Build with Maven
       run: mvn clean install -DskipTests
 
