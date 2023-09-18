@@ -36,7 +36,7 @@ jobs:
     - name: Set path to maven
       id: mvn_path
       run: |
-        echo "$(pwd)/apache-maven-3.9.4/bin" >> $GITHUB_ENV
+        echo "/home/ec2-user/actions-runner/_work/spring_log4j_mysql/spring_log4j_mysql/apache-maven-3.9.4/bin" >> $GITHUB_ENV
     - name: Build with Maven
       run: mvn clean install -DskipTests
 
