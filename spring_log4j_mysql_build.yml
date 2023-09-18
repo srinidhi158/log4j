@@ -18,5 +18,12 @@ jobs:
         with:
           java-version: '1.8'  # You can adjust the Java version as needed
 
+      - name: Set up Maven
+        run: |
+          wget -q https://downloads.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz
+          tar xf apache-maven-3.8.3-bin.tar.gz
+          export PATH=$PATH:$(pwd)/apache-maven-3.8.3/bin
+          mvn --version
+
       - name: Build with Maven
         run: mvn clean install  # Modify this command according to your Maven goals
