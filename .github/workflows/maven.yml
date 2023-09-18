@@ -29,10 +29,16 @@ jobs:
         cache: maven
     - name: Set up Maven
       run: |
-        wget -q https://downloads.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
-        tar -zxvf apache-maven-3.9.4-bin.tar.gz
-        sudo mv apache-maven-3.9.4 /opt
-        sudo ln -s /opt/apache-maven-3.9.4/bin/mvn /usr/bin/mvn
-        mvn --version
+        if ! command -v mvn &> /dev/null
+        then
+          wget -q https://downloads.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
+          tar -zxvf apache-maven-3.9.4-bin.tar.gz
+          sudo mv apache-maven-3.9.4 /opt
+          sudo ln -s /opt/apache-maven-3.9.4/bin/mvn /usr/bin/mvn
+          mvn --version
+        else
+          echo "Maven is already installed."
+          mvn --version
+        fi
     - name: Build with Maven
       run: mvn clean install -DskipTests
