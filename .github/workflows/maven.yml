@@ -30,13 +30,10 @@ jobs:
     - name: Set up Maven
       run: |
         wget -q https://downloads.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
-        tar xf apache-maven-3.9.4-bin.tar.gz
-        export PATH=$PATH:$(pwd)/apache-maven-3.9.4/bin
+        tar -zxvf apache-maven-3.9.4-bin.tar.gz
+        sudo mv apache-maven-3.9.4 /opt
+        sudo ln -s /opt/apache-maven-3.9.4/bin/mvn /usr/bin/mvn
         mvn --version
-    - name: Set path to maven
-      id: mvn_path
-      run: |
-        echo "/home/ec2-user/actions-runner/_work/spring_log4j_mysql/spring_log4j_mysql/apache-maven-3.9.4" >> $GITHUB_ENV
     - name: Build with Maven
       run: mvn clean install -DskipTests
 
