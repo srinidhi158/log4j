@@ -28,11 +28,11 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Set up Maven
-          run: |
-            wget -q https://downloads.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz
-            tar xf apache-maven-3.8.3-bin.tar.gz
-            export PATH=$PATH:$(pwd)/apache-maven-3.8.3/bin
-            mvn --version
+      run: |
+        wget -q https://downloads.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz
+        tar xf apache-maven-3.8.3-bin.tar.gz
+        export PATH=$PATH:$(pwd)/apache-maven-3.8.3/bin
+        mvn --version
     - name: Build with Maven
       run: mvn clean install -DskipTests
 
