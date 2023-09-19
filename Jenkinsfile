@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'systemtest'
+    }
 
     stages {
         stage('Checkout') {
