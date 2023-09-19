@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'systemtest'
+        label 'log4j'
     }
 
     stages {
